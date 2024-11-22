@@ -1,0 +1,1 @@
+export const TOKEN_SECRET = 'some secret key'  //parametros del token
