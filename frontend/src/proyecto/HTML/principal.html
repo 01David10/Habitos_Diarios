@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hábitos Diarios</title>
     <link rel="stylesheet" href="/frontend/src/proyecto/CSS/principal.css">
 </head>
+
 <body>
     <header>
         <!-- Bloque del logo -->
         <div class="logo">
             <img src="/frontend/assets/Log 2.PNG" alt="Hábitos Diarios">
         </div>
-        
+
         <!-- Bloque del menú de navegación -->
         <nav class="main-menu">
             <ul>
@@ -21,29 +23,113 @@
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
-        
+
         <!-- Bloque de botones de autenticación -->
         <div class="auth-buttons">
             <button class="register-button">Registrarse</button>
             <button class="login-button">Iniciar sesión</button>
         </div>
     </header>
-    
+
+    <!-- Nueva sección bajo el header -->
+    <section class="intro">
+        <h1>Aplicación Gratuita para Seguir los Hábitos Diarios</h1>
+        <p>Hábitos Diarios es una aplicación web diseñada para ayudar a los usuarios a registrar y hacer seguimiento de
+            sus hábitos diarios. Podrás marcar los hábitos que completaste en el día, ver el historial de tus logros y
+            obtener un pequeño resumen de tu progreso semanal.</p>
+        <button class="manage-habits-button">Gestiona Aquí</button>
+    </section>
+
+    <!-- Contenido Principal -->
     <main>
-        <section class="welcome">
-            <h2>Bienvenido a Hábitos Diarios</h2>
-            <button class="manage-habits-button">Gestionar Hábitos</button>
-            <p>Empieza a gestionar tus hábitos diarios</p>
+        <!-- Sección de tarjetas estilo bienestar -->
+        <section class="content-cards">
+            <h2 class="section-title">Contenidos para tu bienestar</h2>
+
+            <div class="cards-container">
+                <!-- Tarjeta 1 -->
+                <div class="card">
+                    <img src="/frontend/assets/Meditacion.jpg" alt="Imagen hábito 1" class="card-image">
+                    <div class="card-content">
+                        <span class="card-date">16 de Diciembre de 2024</span>
+                        <h3 class="card-title">Empieza tu día con meditación</h3>
+                        <p class="card-description">La meditación diaria puede ayudarte a reducir el estrés y mejorar tu
+                            concentración. Aprende a incorporarla en tus mañanas.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="card">
+                    <img src="/frontend/assets/Ejecicio.jpg" alt="Imagen hábito 2" class="card-image">
+                    <div class="card-content">
+                        <span class="card-date">16 de Diciembre de 2024</span>
+                        <h3 class="card-title">Ejercita tu cuerpo todos los días</h3>
+                        <p class="card-description">Realizar actividad física diaria mejora tu salud mental y física. Te
+                            compartimos algunas rutinas sencillas.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="card">
+                    <img src="/frontend/assets/Estudio.jpg" alt="Imagen hábito 3" class="card-image">
+                    <div class="card-content">
+                        <span class="card-date">16 de Diciembre de 2024</span>
+                        <h3 class="card-title">Empieza con tus estudios</h3>
+                        <p class="card-description">Haz un seguimiento de tus estudios y progresos diarios para alcanzar
+                            tus objetivos a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        
-        <section class="contact-support">
-            <h2>Contacto y Soporte</h2>
-            <p>Si necesitas ayuda, no dudes en contactarnos.</p>
-        </section>
-    </main>
+
+        <!-- Sección de Soporte -->
+<section class="contact-support">
+    <h2 class="section-title">¿Necesitas ayuda? Contáctanos</h2>
+    <p class="contact-description">Aquí tienes nuestras opciones de soporte para resolver tus dudas:</p>
     
-    <footer>
-        <p>&copy; 2024 Hábitos Diarios. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Bloques de contacto -->
+    <div class="support-container">
+        <!-- Soporte por correo -->
+        <div class="support-card">
+            <img src="/frontend/assets/email_logo.png" alt="Correo" class="support-icon">
+            <h3>Soporte por correo</h3>
+            <p>Escríbenos a:</p>
+            <a href="mailto:david_correa82212@elpoli.edu.co">david_correa82212@elpoli.edu.co</a>
+            <a href="mailto:miguel_narvaez82172@elpoli.edu.co">miguel_narvaez82172@elpoli.edu.co</a>
+        </div>
+        <!-- Preguntas frecuentes -->
+        <div class="support-card">
+            <img src="/frontend/assets/faq.png" alt="FAQ" class="support-icon">
+            <h3>Preguntas frecuentes</h3>
+            <p>Consulta nuestras preguntas frecuentes para respuestas rápidas.</p>
+            <a href="#">Ir a preguntas frecuentes</a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <!-- Footer -->
+<footer>
+    <p>&copy; 2024 Hábitos Diarios. Todos los derechos reservados.</p>
+    <div class="social-buttons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="/frontend/assets/Facebook.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">
+            <img src="/frontend/assets/WhatsApp.png" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="/frontend/assets/Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="X">
+            <img src="/frontend/assets/X.png" alt="X">
+        </a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub">
+            <img src="/frontend/assets/GitHub.png" alt="GitHub">
+        </a>
+    </div>
+</footer>
 </body>
 </html>
