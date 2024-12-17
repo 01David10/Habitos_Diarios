@@ -64,10 +64,13 @@ export const login = async (req, res) => {
 export const logout = (req, res) => {
   // Funcion para salir del programa
   res.cookie("token", "", {
-    expires: new Date(0),
+    expires: new Date(0),  
   });
-  return res.sendStatus(200);
+
+  // Redirigir al usuario a la página de login después de hacer logout
+  return res.redirect("/frontend/src/proyecto/HTML/login.html");
 };
+
 
 export const profile = async (req, res) => {
   //Acceder a Datos del Usuario
