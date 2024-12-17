@@ -18,7 +18,7 @@
         <!-- Bloque del menú de navegación -->
         <nav class="main-menu">
             <ul>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="/frontend/src/proyecto/HTML/principal.html">Inicio</a></li>
                 <li><a href="#">Acerca de</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
@@ -26,9 +26,15 @@
 
         <!-- Bloque de botones de autenticación -->
         <div class="auth-buttons">
-            <button class="register-button">Registrarse</button>
-            <button class="login-button">Iniciar sesión</button>
+            <a href="/frontend/src/proyecto/HTML/register.html">
+                <button class="register-button">Registrarse</button>
+            </a>
+            <a href="/frontend/src/proyecto/HTML/login.html">
+                <button class="login-button">Iniciar sesión</button>
+            </a>
+            <button class="logout-button" id="logoutButton" style="display:none;">Salir</button>
         </div>
+        
     </header>
 
     <!-- Nueva sección bajo el header -->
@@ -109,8 +115,7 @@
 
     </main>
 
-    <!-- FOOTER SECTION -->
-    <!-- Footer -->
+    <!-- Seccion del Footer -->
 <footer>
     <p>&copy; 2024 Hábitos Diarios. Todos los derechos reservados.</p>
     <div class="social-buttons">
@@ -131,5 +136,6 @@
         </a>
     </div>
 </footer>
+<script src="/frontend/src/proyecto/JS/principal.js"></script>
 </body>
 </html>
