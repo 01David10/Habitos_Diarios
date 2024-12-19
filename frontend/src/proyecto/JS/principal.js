@@ -11,6 +11,10 @@ function getCookie(name) {
   const loginButton = document.querySelector(".login-button");
   const registerButton = document.querySelector(".register-button");
   const logoutButton = document.querySelector(".logout-button");
+
+  const meditationCard = document.querySelector("#meditation-card");
+  const workoutCard = document.querySelector("#workout-card");
+  const studyCard = document.querySelector("#study-card");
   
   // Mostrar/Ocultar botones dependiendo de si hay un token
   if (token) {
