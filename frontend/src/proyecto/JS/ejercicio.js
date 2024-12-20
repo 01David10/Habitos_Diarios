@@ -31,3 +31,23 @@ btnCreateHabit.addEventListener('click', async () => {
 
 // visualizar habitos
 
+const habitTable = document.getElementById('habit-table');
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('http://localhost:3000/api/habits/ejercicio');
+        const habits = await response.json();
+
+        habits.forEach(habit => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${habit.name}</td>
+                <td>${habit.frecuency}</td>
+            `;
+            habitTable.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error al obtener los habitos:', error);
+        alert('Hubo un problema al intentar obtener los habitos.');
+    }
+});
