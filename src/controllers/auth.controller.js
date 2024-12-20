@@ -71,7 +71,6 @@ export const logout = (req, res) => {
   return res.redirect("/frontend/src/proyecto/HTML/login.html");
 };
 
-
 export const profile = async (req, res) => {
   //Acceder a Datos del Usuario
   const userFound = await User.findById(req.user.id);

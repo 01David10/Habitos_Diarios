@@ -1,0 +1,141 @@
+<!-- Sección de visualización de hábitos -->
+<section class="habit-list"></section>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hábitos Diarios</title>
+    <link rel="stylesheet" href="/frontend/src/proyecto/CSS/principal.css">
+    <link rel="stylesheet" href="/frontend/src/proyecto/CSS/habitos.css">
+</head>
+
+<body>
+    <header>
+        <!-- Bloque del logo -->
+        <div class="logo">
+            <img src="/frontend/assets/Log 2.PNG" alt="Hábitos Diarios">
+        </div>
+
+        <!-- Bloque del menú de navegación -->
+        <nav class="main-menu">
+            <ul>
+                <li><a href="/frontend/src/proyecto/HTML/principal.html">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Bloque de botones de autenticación -->
+        <div class="auth-buttons">
+            <a href="/frontend/src/proyecto/HTML/register.html">
+                <button class="register-button">Registrarse</button>
+            </a>
+            <a href="/frontend/src/proyecto/HTML/login.html">
+                <button class="login-button">Iniciar sesión</button>
+            </a>
+            <button class="logout-button" id="logoutButton" style="display:none;">Salir</button>
+        </div>
+
+    </header>
+
+    <!-- Nueva sección bajo el header -->
+    <section class="intro">
+        <h1>Aplicación Gratuita para Seguir los Hábitos Diarios</h1>
+        <p>Hábitos Diarios es una aplicación web diseñada para ayudar a los usuarios a registrar y hacer seguimiento de
+            sus hábitos diarios. Podrás marcar los hábitos que completaste en el día, ver el historial de tus logros y
+            obtener un pequeño resumen de tu progreso semanal.</p>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección para insertar rutina -->
+        <section>
+            <h2 class="section-title">Planea tus habitos para estudiar</h2>
+
+            <form id="habitForm">
+                <label for="habit-name">Nombre del Hábito:</label>
+                <input type="text" id="habit-name" name="name" required>
+
+                <label for="frecuency">Frecuencia:</label>
+                <select id="frecuency" name="frecuency" required>
+                    <option selected disabled value="">Selecciona una opción</option>
+                    <option value="Diaria">Diaria</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="2 veces por semana">2 veces por semana</option>
+                    <option value="3 veces por semana">3 veces por semana</option>
+                </select>
+
+                <button type="button" id="btn-insert">Guardar Hábito</button>
+            </form>
+
+        </section>
+
+        <!-- Sección para visualizar los hábitos creados -->
+        <section class="habit-list-section">
+            <h2 class="section-title">Hábitos Creados</h2>
+            <table id="habit-table" class="habit-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Hábito</th>
+                        <th>Frecuencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán los hábitos dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Sección de Soporte -->
+        <section class="contact-support">
+            <h2 class="section-title">¿Necesitas ayuda? Contáctanos</h2>
+            <p class="contact-description">Aquí tienes nuestras opciones de soporte para resolver tus dudas:</p>
+
+            <!-- Bloques de contacto -->
+            <div class="support-container">
+                <!-- Soporte por correo -->
+                <div class="support-card">
+                    <img src="/frontend/assets/email_logo.png" alt="Correo" class="support-icon">
+                    <h3>Soporte por correo</h3>
+                    <p>Escríbenos a:</p>
+                    <a href="mailto:david_correa82212@elpoli.edu.co">david_correa82212@elpoli.edu.co</a>
+                    <a href="mailto:miguel_narvaez82172@elpoli.edu.co">miguel_narvaez82172@elpoli.edu.co</a>
+                </div>
+                <!-- Preguntas frecuentes -->
+                <div class="support-card">
+                    <img src="/frontend/assets/faq.png" alt="FAQ" class="support-icon">
+                    <h3>Preguntas frecuentes</h3>
+                    <p>Consulta nuestras preguntas frecuentes para respuestas rápidas.</p>
+                    <a href="#">Ir a preguntas frecuentes</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Seccion del Footer -->
+    <footer>
+        <p>&copy; 2024 Hábitos Diarios. Todos los derechos reservados.</p>
+        <div class="social-buttons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <img src="/frontend/assets/Facebook.png" alt="Facebook">
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">
+                <img src="/frontend/assets/WhatsApp.png" alt="WhatsApp">
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                <img src="/frontend/assets/Instagram.png" alt="Instagram">
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="X">
+                <img src="/frontend/assets/X.png" alt="X">
+            </a>
+            <a href="https://github.com/01David10/Habitos_Diarios" target="_blank" aria-label="GitHub">
+                <img src="/frontend/assets/GitHub.png" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+    <script src="/frontend/src/proyecto/JS/estudio.js"></script>
+</body>
+
+</html>
