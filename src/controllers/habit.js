@@ -1,7 +1,7 @@
 import habit from "../models/habit.js"; // import del objecto habit
 
 export const createHabit = async (req, res) => {
-    //Funcion para Crear,Guardar  el habito
+    //Funcion para Crear, Guardar el habito
     const { name, frecuency } = req.body; //requerimientos
 
     try {
@@ -9,7 +9,7 @@ export const createHabit = async (req, res) => {
             //Crear Habito
             name,
             frecuency,
-            user: req.user.id,
+            // user: req.user.id,
         });
 
         const habitSaved = await newHabit.save(); //Guardar Habito

@@ -14,7 +14,7 @@ const habit = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId, // ObjectId del usuario
         ref: 'userSchema', // relacion con el esquema de usuario
-        required: true
+        required: false // no es requerido (si no se autentica)
     },
 },{
     timestamps:true // crea la fecha de creacion y actualizacion

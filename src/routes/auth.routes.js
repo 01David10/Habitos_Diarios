@@ -20,7 +20,7 @@ import {
   getHabit,
   updateHabit,
   deleteHabit,
-} from "../controllers/habit.controller.js";
+} from "../controllers/habit.js";
 
 const router = Router(); // Rutas del programa
 
@@ -33,10 +33,10 @@ router.post("/logout", logout);
 router.get("/profile", authRequired, profile);
 
 // habitos
-router.post("/habits", authRequired, createHabit);
-router.get("/habits", authRequired, getHabits);
-router.get("/habits/:id", authRequired, getHabit);
-router.put("/habits/:id", authRequired, updateHabit);
-router.delete("/habits/:id", authRequired, deleteHabit);
+router.post("/createHabit", createHabit);
+router.get("/habits", getHabits);
+router.get("/habits/:id", getHabit);
+router.put("/habits/:id", updateHabit);
+router.delete("/habits/:id", deleteHabit);
 
 export default router;
