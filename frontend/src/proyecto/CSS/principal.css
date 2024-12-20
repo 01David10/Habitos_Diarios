@@ -159,8 +159,10 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px; 
     width: 100%;
-    max-width: 100%; 
+    max-width: 1200px;
+    border-radius: 12px; 
 }
+
 .section-title {
     font-size: 28px; 
     font-weight: bold;
