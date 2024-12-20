@@ -17,7 +17,7 @@ import { authRequired } from "../middlewares/validateToken.js"; // importacion d
 import {
   createHabit,
   getHabits,
-  getHabit,
+  getHabitByCategory,
   updateHabit,
   deleteHabit,
 } from "../controllers/habit.js";
@@ -35,8 +35,8 @@ router.get("/profile", authRequired, profile);
 // habitos
 router.post("/createHabit", createHabit);
 router.get("/habits", getHabits);
-router.get("/habits/:id", getHabit);
-router.put("/habits/:id", updateHabit);
+router.get("/habits/:category", getHabitByCategory); 
+router.put("/habits/:id", updateHabit);     
 router.delete("/habits/:id", deleteHabit);
 
 export default router;

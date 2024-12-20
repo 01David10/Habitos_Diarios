@@ -2,11 +2,12 @@ import habit from "../models/habit.js"; // import del objecto habit
 
 export const createHabit = async (req, res) => {
     //Funcion para Crear, Guardar el habito
-    const { name, frecuency } = req.body; //requerimientos
+    const { category, name, frecuency } = req.body; //requerimientos
 
     try {
         const newHabit = new habit({
             //Crear Habito
+            category,
             name,
             frecuency,
             // user: req.user.id,
@@ -17,6 +18,7 @@ export const createHabit = async (req, res) => {
         res.json({
             // Respuesta del servidor de los parametros del habito
             id: habitSaved.id,
+            category: habitSaved.category,
             name: habitSaved.name,
             frecuency: habitSaved.frecuency,
             createdAt: habitSaved.createdAt,
@@ -30,18 +32,18 @@ export const createHabit = async (req, res) => {
 export const getHabits = async (req, res) => {
     //Funcion para Obtener los habitos
     try {
-        const habits = await habit.find({ user: req.user.id }); // Encontrar Habitos del usuario
+        const habits = await habit.find({ user: req.user.id }); // Encontrar Habitos de 
         res.json(habits); //Mostrar Habitos
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 }
 
-export const getHabit = async (req, res) => {
+export const getHabitByCategory = async (req, res) => {
     //Funcion para Obtener un habito
     try {
-        const habitFound = await habit.findById(req.params.id); // Encontrar Habito por ID
-        res.json(habitFound); //Mostrar Habito
+        const habitFound = await habit.find({category: req.params.category}); // Encontrar Habito por ID
+        res.json(habitFound); //Mostrar Habitos
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

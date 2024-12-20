@@ -3,6 +3,7 @@ const frecuencyInput = document.getElementById('frecuency');
 const btnCreateHabit = document.getElementById('btn-insert');
 
 btnCreateHabit.addEventListener('click', async () => {
+    category = 'ejercicio';
     const name = habitInput.value;
     const frecuency = frecuencyInput.value;
 
@@ -12,7 +13,7 @@ btnCreateHabit.addEventListener('click', async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, frecuency }),
+            body: JSON.stringify({ category, name, frecuency }),
         });
 
         if (response.ok) {
@@ -27,4 +28,6 @@ btnCreateHabit.addEventListener('click', async () => {
         alert('Hubo un problema al intentar crear el habito.');
     }
 });
+
+// visualizar habitos
 

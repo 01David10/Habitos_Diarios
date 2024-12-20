@@ -35,3 +35,21 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.habit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.habit-table th, .habit-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.habit-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}

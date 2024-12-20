@@ -1,6 +1,11 @@
 import mongoose from "mongoose"; // modulo de mongo
 
 const habit = new mongoose.Schema({
+    category:{
+        type: String,
+        require: true,
+        trim: true
+    },
     name:{
         type: String,
         require: true,

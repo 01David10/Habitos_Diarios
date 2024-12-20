@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+<!-- Sección de visualización de hábitos -->
+<section class="habit-list"></section>
 
 <head>
     <meta charset="UTF-8">
@@ -48,7 +48,7 @@
 
     <!-- Contenido Principal -->
     <main>
-        <!-- Sección de tarjetas estilo bienestar -->
+        <!-- Sección para insertar rutina -->
         <section class="content-cards">
             <h2 class="section-title">Planea tu rutina de entrenamiento</h2>
 
@@ -69,6 +69,23 @@
             </form>
 
         </section>
+
+        <!-- Sección para visualizar los hábitos creados -->
+        <section class="habit-list-section">
+            <h2 class="section-title">Hábitos Creados</h2>
+            <table id="habitTable" class="habit-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Hábito</th>
+                        <th>Frecuencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán los hábitos dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
 
         <!-- Sección de Soporte -->
         <section class="contact-support">
