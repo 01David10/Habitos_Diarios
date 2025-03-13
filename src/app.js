@@ -21,16 +21,15 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
 
-// Definir __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url); // obtiene la ruta del archivo actual (ya que no se puede usar __dirname por estar en módulos ES)
+const __dirname = path.dirname(__filename); // obtiene la ruta del directorio actual
 
-// inclusion del frontend en el servidor
 const frontendPath = path.join(__dirname, "../frontend");
 
+// inclusion del frontend en el servidor
 app.use(express.static(frontendPath));
 
-// Ruta para servir el frontend en cualquier ruta desconocida
+// endpoint para la página principal
 app.get("/", (req, res) => {
     res.sendFile(path.join(frontendPath, "/src/HTML/login.html"));
 });
