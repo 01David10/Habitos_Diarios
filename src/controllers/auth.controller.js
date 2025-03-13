@@ -77,7 +77,7 @@ export const logout = (req, res) => {
   });
 
   // Redirigir al usuario a la página de login después de hacer logout
-  return res.redirect("/frontend/src/proyecto/HTML/login.html");
+  return res.redirect("/frontend/src/HTML/login.html");
 };
 
 export const profile = async (req, res) => {

@@ -27,7 +27,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
             alert("¡Usuario registrado correctamente!");
             console.log("Respuesta del servidor:", data);
             // Redirigir a otra página si lo deseas
-            window.location.href = "/frontend/src/proyecto/HTML/login.html";
+            window.location.href = "/frontend/src/HTML/login.html";
         } else {
             alert("Error: " + data.message);
         }
