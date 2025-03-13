@@ -13,6 +13,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials: "include",
             body: JSON.stringify({
                 username,
                 email,

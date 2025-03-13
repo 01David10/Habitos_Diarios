@@ -18,7 +18,10 @@ export const register = async (req, res) => {
 
     const userSaved = await newUser.save(); //Guardar usuario
     const token = await createAccessToken({ id: userSaved.id }); //Creacion del Token
-    res.cookie("token", token); // Guardar token en Cookie
+    res.cookie("token", token, {
+      secure: false,
+      sameSite: "none"
+    });
 
     res.json({
       // Respuesta del servidor de los parametros del usuario
@@ -47,7 +50,13 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "Contraseña incorrecta" }); // Mensaje de contraseña incorrecta
 
     const token = await createAccessToken({ id: userFound.id }); //Creacion del Token con ese ID
-    res.cookie("token", token); // Guardar token en Cookie
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: false,  // ❌ No se puede usar true en HTTP
+      sameSite: "Lax",  // 🔥 Funciona sin HTTPS en localhost
+      path: "/",
+      maxAge: 1000 * 60 * 60 * 24  // 1 día
+    });
 
     res.json({
       id: userFound.id,
@@ -63,8 +72,8 @@ export const login = async (req, res) => {
 
 export const logout = (req, res) => {
   // Funcion para salir del programa
-  res.cookie("token", "", {
-    expires: new Date(0),  
+  res.cookie("token", " ", {
+    expires: new Date(0),
   });
 
   // Redirigir al usuario a la página de login después de hacer logout
