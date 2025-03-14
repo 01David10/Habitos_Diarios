@@ -7,7 +7,7 @@ export const register = async (req, res) => {
   const { email, password, username } = req.body; //requerimientos
 
   try {
-    const passwordHash = await bcrypt.hash(password, 10); //Emcriptar contraseña
+    const passwordHash = await bcrypt.hash(password, 10); //Encriptar contraseña
 
     const newUser = new User({
       //Crear Usuario
@@ -19,8 +19,7 @@ export const register = async (req, res) => {
     const userSaved = await newUser.save(); //Guardar usuario
     const token = await createAccessToken({ id: userSaved.id }); //Creacion del Token
     res.cookie("token", token, {
-      secure: false,
-      sameSite: "none"
+      httpOnly: true,
     });
 
     res.json({
@@ -52,10 +51,6 @@ export const login = async (req, res) => {
     const token = await createAccessToken({ id: userFound.id }); //Creacion del Token con ese ID
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,  // ❌ No se puede usar true en HTTP
-      sameSite: "Lax",  // 🔥 Funciona sin HTTPS en localhost
-      path: "/",
-      maxAge: 1000 * 60 * 60 * 24  // 1 día
     });
 
     res.json({
@@ -70,11 +65,10 @@ export const login = async (req, res) => {
   }
 };
 
+// Funcion para salir del programa
 export const logout = (req, res) => {
-  // Funcion para salir del programa
-  res.cookie("token", " ", {
-    expires: new Date(0),
-  });
+  // eliminar cookie
+  res.clearCookie("token")
 
   // Redirigir al usuario a la página de login después de hacer logout
   return res.redirect("/src/HTML/login.html");

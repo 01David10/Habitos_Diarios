@@ -10,7 +10,7 @@ import {
   profile,
 } from "../controllers/auth.controller.js";
 
-// token
+// requerir token
 import { authRequired } from "../middlewares/validateToken.js"; // importacion de la validacion del Token (antes de acceder)
 
 // habitos
