@@ -18,8 +18,6 @@ import {
   createHabit,
   getHabits,
   getHabitByCategory,
-  updateHabit,
-  deleteHabit,
 } from "../controllers/habit.js";
 
 const router = Router(); // Rutas del programa
@@ -30,13 +28,19 @@ const router = Router(); // Rutas del programa
 router.post("/register", register);
 router.post("/login", login);
 router.post("/logout", authRequired, logout);
-router.get("/profile", profile);
+router.get("/profile", authRequired, profile);
+
+// verificar si ya inicio sesion
+router.get("/check-session", (req, res) => {
+  if (req.cookies.token) {
+      return res.json({ authenticated: true });
+  }
+  res.json({ authenticated: false });
+});
 
 // habitos
 router.post("/createHabit", authRequired, createHabit);
 router.get("/habits", authRequired, getHabits);
 router.get("/habits/:category", authRequired, getHabitByCategory); 
-router.put("/habits/:id", updateHabit);     
-router.delete("/habits/:id", deleteHabit);
 
 export default router;

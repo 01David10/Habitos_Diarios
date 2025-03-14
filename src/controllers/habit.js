@@ -49,25 +49,25 @@ export const getHabitByCategory = async (req, res) => {
     }
 }
 
-export const updateHabit = async (req, res) => {
-    //Funcion para Actualizar un habito
-    const { name, frecuency } = req.body; //requerimientos
-    try {
-        await
-            habit.findByIdAndUpdate(req.params.id, { name, frecuency }); //Actualizar Habito por ID
-        res.json({ message: "Habito Actualizado" }); //Mensaje de Habito Actualizado
-    }
-    catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-}
+// export const updateHabit = async (req, res) => {
+//     //Funcion para Actualizar un habito
+//     const { name, frecuency } = req.body; //requerimientos
+//     try {
+//         await
+//             habit.findByIdAndUpdate(req.params.id, { name, frecuency }); //Actualizar Habito por ID
+//         res.json({ message: "Habito Actualizado" }); //Mensaje de Habito Actualizado
+//     }
+//     catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// }
 
-export const deleteHabit = async (req, res) => {
-    //Funcion para Eliminar un habito
-    try {
-        await habit.findByIdAndDelete(req.params.id); //Eliminar Habito por ID
-        res.json({ message: "Habito Eliminado" }); //Mensaje de Habito Eliminado
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-}
+// export const deleteHabit = async (req, res) => {
+//     //Funcion para Eliminar un habito
+//     try {
+//         await habit.findByIdAndDelete(req.params.id); //Eliminar Habito por ID
+//         res.json({ message: "Habito Eliminado" }); //Mensaje de Habito Eliminado
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// }
