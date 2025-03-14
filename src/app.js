@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const app = express();
 
 const corsOptions = {
-    origin: "http://127.0.0.1:5500", // Permite solo este origen (la URL de tu frontend)
+    origin: "http://127.0.0.1:3000", // Permite solo este origen (la URL de tu frontend)
     methods: ["GET", "POST"], // Permite solo los métodos GET y POST
     allowedHeaders: ["Content-Type", "Authorization"], // Permite estos encabezados
     credentials: true, // Habilita el intercambio de cookies entre el frontend y el backend
