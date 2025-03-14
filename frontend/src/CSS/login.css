@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/frontend/assets/fondo.jpeg') no-repeat center center fixed;
+    background: url('/assets/fondo.jpeg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.login-container, .register-container {
+.login-container {
     background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 10px;

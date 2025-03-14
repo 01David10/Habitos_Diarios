@@ -2,7 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background: url('/frontend/assets/bg_workout.jpeg') no-repeat center center fixed;
+    background: url('/assets/bg_workout.jpeg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;

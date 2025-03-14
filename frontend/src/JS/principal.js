@@ -1,11 +1,11 @@
-// Función para obtener el valor de una cookie por su nombre
-function getCookie(name) {
-  let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  return match ? match[2] : null;
-}
+// // Función para obtener el valor de una cookie por su nombre
+// function getCookie(name) {
+//   let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+//   return match ? match[2] : null;
+// }
 
-// Verificar si el token existe
-const token = getCookie("token");
+// // Verificar si el token existe
+// const token = getCookie("token");
 
 // Elementos del DOM
 const loginButton = document.querySelector(".login-button");
@@ -17,17 +17,17 @@ const workoutCard = document.querySelector("#workout-card");
 const studyCard = document.querySelector("#study-card");
 
 // Mostrar/Ocultar botones dependiendo de si hay un token
-if (token) {
-  // Si hay un token, mostrar "Salir" y ocultar "Iniciar sesión" y "Registrarse"
-  loginButton.style.display = "none";
-  registerButton.style.display = "none";
-  logoutButton.style.display = "block";
-} else {
-  // Si no hay un token, mostrar "Iniciar sesión" y "Registrarse"
-  loginButton.style.display = "block";
-  registerButton.style.display = "block";
-  logoutButton.style.display = "none";
-}
+// if (token) {
+//   // Si hay un token, mostrar "Salir" y ocultar "Iniciar sesión" y "Registrarse"
+//   loginButton.style.display = "none";
+//   registerButton.style.display = "none";
+//   logoutButton.style.display = "block";
+// } else {
+//   // Si no hay un token, mostrar "Iniciar sesión" y "Registrarse"
+//   loginButton.style.display = "block";
+//   registerButton.style.display = "block";
+//   logoutButton.style.display = "none";
+// }
 
 // Función para hacer logout
 async function logout() {
@@ -60,13 +60,13 @@ if (logoutButton) {
 
 // eventos para las tarjetas
 workoutCard.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5500/frontend/src/proyecto/HTML/ejercicio.html";
+  window.location.href = "http://127.0.0.1:3000/src/HTML/ejercicio.html";
 });
 
 meditationCard.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5500/frontend/src/proyecto/HTML/meditacion.html";
+  window.location.href = "http://127.0.0.1:3000/src/HTML/meditacion.html";
 });
 
 studyCard.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5500/frontend/src/proyecto/HTML/estudio.html";
+  window.location.href = "http://127.0.0.1:3000/src/HTML/estudio.html";
 });

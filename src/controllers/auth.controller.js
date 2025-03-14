@@ -7,7 +7,7 @@ export const register = async (req, res) => {
   const { email, password, username } = req.body; //requerimientos
 
   try {
-    const passwordHash = await bcrypt.hash(password, 10); //Emcriptar contraseña
+    const passwordHash = await bcrypt.hash(password, 10); //Encriptar contraseña
 
     const newUser = new User({
       //Crear Usuario
@@ -18,7 +18,9 @@ export const register = async (req, res) => {
 
     const userSaved = await newUser.save(); //Guardar usuario
     const token = await createAccessToken({ id: userSaved.id }); //Creacion del Token
-    res.cookie("token", token); // Guardar token en Cookie
+    res.cookie("token", token, {
+      httpOnly: true,
+    });
 
     res.json({
       // Respuesta del servidor de los parametros del usuario
@@ -47,7 +49,9 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "Contraseña incorrecta" }); // Mensaje de contraseña incorrecta
 
     const token = await createAccessToken({ id: userFound.id }); //Creacion del Token con ese ID
-    res.cookie("token", token); // Guardar token en Cookie
+    res.cookie("token", token, {
+      httpOnly: true,
+    });
 
     res.json({
       id: userFound.id,
@@ -61,14 +65,13 @@ export const login = async (req, res) => {
   }
 };
 
+// Funcion para salir del programa
 export const logout = (req, res) => {
-  // Funcion para salir del programa
-  res.cookie("token", "", {
-    expires: new Date(0),  
-  });
+  // eliminar cookie
+  res.clearCookie("token")
 
   // Redirigir al usuario a la página de login después de hacer logout
-  return res.redirect("/frontend/src/proyecto/HTML/login.html");
+  return res.redirect("/src/HTML/login.html");
 };
 
 export const profile = async (req, res) => {

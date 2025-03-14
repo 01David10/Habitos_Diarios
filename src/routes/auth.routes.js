@@ -10,7 +10,7 @@ import {
   profile,
 } from "../controllers/auth.controller.js";
 
-// token
+// requerir token
 import { authRequired } from "../middlewares/validateToken.js"; // importacion de la validacion del Token (antes de acceder)
 
 // habitos
@@ -30,7 +30,7 @@ const router = Router(); // Rutas del programa
 router.post("/register", register);
 router.post("/login", login);
 router.post("/logout", logout);
-router.get("/profile", authRequired, profile);
+router.get("/profile", profile);
 
 // habitos
 router.post("/createHabit", createHabit);

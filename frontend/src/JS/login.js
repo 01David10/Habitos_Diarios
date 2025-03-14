@@ -12,6 +12,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify({ email, password }), // Enviar el email y password
         });
 
@@ -19,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
         if (response.ok) {
             alert("¡Bienvenido, " + data.username + "!");
-            window.location.href = "/frontend/src/proyecto/HTML/principal.html";
+            window.location.href = "/src/HTML/principal.html";
         } else {
             // Si hubo un error, mostrar el mensaje de error
             alert(data.message || "Error en el login");
