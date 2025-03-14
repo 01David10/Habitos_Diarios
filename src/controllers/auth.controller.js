@@ -36,6 +36,11 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+  // verificar que no haya sesion iniciada
+  // if (req.cookies.token) {
+  //   return res.status(400).json({ message: "Ya hay una sesión activa. Cierra sesión primero." });
+  // }
+
   //Funcion para Verificar el login,contraseña del usuario
   const { email, password } = req.body;
 

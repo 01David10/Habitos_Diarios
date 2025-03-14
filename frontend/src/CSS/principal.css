@@ -75,7 +75,7 @@ header {
 }
 
 /* Botones de registrarse e iniciar sesión */
-.register-button, .login-button {
+.register-button, .login-button, .logout-button {
     background-color: #66cc66;
     color: white;
     border: none;
@@ -88,7 +88,7 @@ header {
 }
 
 /* Efecto hover para los botones */
-.register-button:hover, .login-button:hover {
+.register-button:hover, .login-button:hover, .logout-button {
     background-color: #5cb85c;
 }
 /*HASTA AQUI EL HEADER*/
