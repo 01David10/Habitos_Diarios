@@ -37,6 +37,7 @@ async function logout() {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include"
     });
 
     if (response.ok) {
@@ -60,13 +61,13 @@ if (logoutButton) {
 
 // eventos para las tarjetas
 workoutCard.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:3000/src/HTML/ejercicio.html";
+  window.location.href = "http://localhost:3000/src/HTML/ejercicio.html";
 });
 
 meditationCard.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:3000/src/HTML/meditacion.html";
+  window.location.href = "http://localhost:3000/src/HTML/meditacion.html";
 });
 
 studyCard.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:3000/src/HTML/estudio.html";
+  window.location.href = "http://localhost:3000/src/HTML/estudio.html";
 });

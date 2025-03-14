@@ -10,6 +10,7 @@ btnCreateHabit.addEventListener('click', async () => {
     try {
         const response = await fetch('http://localhost:3000/api/createHabit', {
             method: 'POST',
+            credentials: "include",
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -35,7 +36,9 @@ const habitTable = document.getElementById('habit-table');
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/habits/espiritualidad');
+        const response = await fetch('http://localhost:3000/api/habits/espiritualidad', {
+            credentials: "include"
+        })
         const habits = await response.json();
 
         habits.forEach(habit => {

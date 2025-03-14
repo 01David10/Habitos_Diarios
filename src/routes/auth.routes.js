@@ -29,13 +29,13 @@ const router = Router(); // Rutas del programa
 // autenticacion
 router.post("/register", register);
 router.post("/login", login);
-router.post("/logout", logout);
+router.post("/logout", authRequired, logout);
 router.get("/profile", profile);
 
 // habitos
-router.post("/createHabit", createHabit);
-router.get("/habits", getHabits);
-router.get("/habits/:category", getHabitByCategory); 
+router.post("/createHabit", authRequired, createHabit);
+router.get("/habits", authRequired, getHabits);
+router.get("/habits/:category", authRequired, getHabitByCategory); 
 router.put("/habits/:id", updateHabit);     
 router.delete("/habits/:id", deleteHabit);
 
